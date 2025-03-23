@@ -1,8 +1,8 @@
 "use client"
 
 
-import Hero from "@/app/hero/page";
-import Services from "@/app/services/page";
+import Hero from "@/components/Hero";
+import Services from "@/components/Services";
 import ContactForm from "@/app/contact/page";
 import AnimatedSection from "@/components/AnimatedSection";
 import SliderOne from "@/components/ui/Slider";
@@ -25,11 +25,11 @@ export default function Home() {
     brandsRef.current?.scrollIntoView({ behavior: "smooth" })
   }
 
-  const scrollToServiceDesign = () => {
+  const scrollToService = () => {
     serviceRef.current?.scrollIntoView({ behavior: "smooth" })
   }
 
-  const scrollToFaqDesign = () => {
+  const scrollToFaq = () => {
     faqRef.current?.scrollIntoView({ behavior: "smooth" })
   }
 
@@ -38,8 +38,8 @@ export default function Home() {
       <main> {/*className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start" */}
       <AnimatedSection>
       <Hero 
-      scrollToFaqDesign={scrollToFaqDesign}
-      scrollToServiceDesign={scrollToServiceDesign}
+      scrollToFaq={scrollToFaq}
+      scrollToService={scrollToService}
       />
       </AnimatedSection>
       

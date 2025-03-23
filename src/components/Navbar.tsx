@@ -1,19 +1,19 @@
 "use client"
 import Link from "next/link";
-import { useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 
 
 interface NavbarProps {
-  scrollToServiceDesign: () => void;
-  scrollToFaqDesign: () => void;
+  scrollToService: () => void,
+  scrollToFaq: () => void,
 }
 
 const Navbar: React.FC<NavbarProps> = ({
-  scrollToFaqDesign,
-  scrollToServiceDesign,
+  scrollToFaq,
+  scrollToService,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -40,8 +40,8 @@ const Navbar: React.FC<NavbarProps> = ({
           {/* Desktop Menu */}
           <div className="hidden md:flex text-base md:text-lg items-center space-x-30">
             <Link href="/" className="hover:text-gold hover-effect">Home</Link>
-            <div onClick={scrollToServiceDesign} className="hover:text-gold hover-effect">Services</div>
-            <div onClick={scrollToFaqDesign} className="hover:text-gold hover-effect">FAQ</div>
+            <div onClick={scrollToService} className="hover:text-gold hover-effect">Services</div>
+            <div onClick={scrollToFaq} className="hover:text-gold hover-effect">FAQ</div>
           </div>
 
           {/* Desktop "Contact us" Button */}
@@ -61,8 +61,8 @@ const Navbar: React.FC<NavbarProps> = ({
             transition={{ duration: 0.5 }}
           >
             <Link href="/" className="block mt-4 py-6 px-4 hover-effect text-black">Home</Link>
-            <div onClick={scrollToServiceDesign} className="block py-6 px-4 hover-effect text-black">Services</div>
-            <div onClick={scrollToFaqDesign} className="block py-6 px-4 hover-effect text-black">Contact</div>
+            <div onClick={scrollToService} className="block py-6 px-4 hover-effect text-black">Services</div>
+            <div onClick={scrollToFaq} className="block py-6 px-4 hover-effect text-black">Contact</div>
           </motion.div>
         )}
       </div>

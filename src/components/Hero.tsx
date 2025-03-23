@@ -6,12 +6,14 @@ import Link from "next/link";
 
 
 interface HeroProps {
-  scrollToServiceDesign: () => void;
-  scrollToFaqDesign: () => void;
+  scrollToService: () => void
+  scrollToFaq: () => void
 }
 
-const Hero: React.FC<HeroProps> = ({
-scrollToFaqDesign, scrollToServiceDesign})  => {
+const Hero = ({
+  scrollToFaq, 
+  scrollToService
+}:HeroProps) => {
   const { scrollY } = useScroll();
   const yText = useTransform(scrollY, [0, 300], [0, -100]); // Moves text upwards on scroll
   const yImage = useTransform(scrollY, [0, 300], [0, 50]);  // Moves background slower for depth
@@ -26,14 +28,12 @@ scrollToFaqDesign, scrollToServiceDesign})  => {
             
         </div>
       </motion.div>
-
-<script async src="//www.instagram.com/embed.js"></script>
       {/* Semi-transparent Overlay for Better Readability */}
       <div className="absolute inset-0 bg-black/60"></div>
       <div className="relative z-50">
         <Navbar 
-        scrollToFaqDesign={scrollToFaqDesign}
-        scrollToServiceDesign={scrollToServiceDesign}/>
+        scrollToFaq={scrollToFaq}
+        scrollToService={scrollToService}/>
       </div>
 
       <Spotlight className="hidden md:flex md:left-80 md:top-80"
