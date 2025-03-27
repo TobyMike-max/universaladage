@@ -62,7 +62,8 @@ const Navbar: React.FC<NavbarProps> = ({
           >
             <Link href="/" className="block mt-4 py-6 px-4 hover-effect text-black">Home</Link>
             <div onClick={scrollToService} className="block py-6 px-4 hover-effect text-black">Services</div>
-            <div onClick={scrollToFaq} className="block py-6 px-4 hover-effect text-black">Contact</div>
+            <Link href="/contact" className="block py-6 px-4 hover-effect text-black">Contact</Link>
+            <div onClick={scrollToFaq} className="block py-6 px-4 hover-effect text-black">FAQ</div>
           </motion.div>
         )}
       </div>

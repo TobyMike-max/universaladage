@@ -108,6 +108,7 @@ export default function ContactForm() {
   async function onSubmit(data: z.infer<typeof FormSchema>) {
     try {
       setLoading(true);
+      console.log('people');
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -172,7 +173,7 @@ export default function ContactForm() {
             <form
               onSubmit={form.handleSubmit(onSubmit)}
               className="space-y-4 h-full border rounded-3xl p-10 md:w-1/3">
-              <div className="md:flex items-center gap-6 ">
+              <div className="md:flex items-center gap-6 w-full">
                 <FormField
                   control={form.control}
                   name="first_name"
@@ -330,7 +331,7 @@ export default function ContactForm() {
                 </div>
                 <div className="text-xs font-light  md:w-3/4 mb-1 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
                   I agree to Universaladage&apos; sending marketing communications related
-                  to bird.
+                  to Universaladage.
                 </div>
               </div>
 

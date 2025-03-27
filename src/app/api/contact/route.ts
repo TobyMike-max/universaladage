@@ -6,12 +6,10 @@ export async function POST(req: Request) {
   if (req.method === "POST") {
 
     try {
-
     const {
       first_name,
       last_name,
       email,
-     
       company_name,
       help,
       company_size,
@@ -23,8 +21,8 @@ export async function POST(req: Request) {
         port: 465,
         secure: true,
         auth: {
-          user: "tasicigor123@gmail.com",
-          pass: "bsel kcxt drvb srcx",
+          user: "osinubi.michael@gmail.com",
+          pass: "rhfq oxea agzf otlt",
         },
       });
 

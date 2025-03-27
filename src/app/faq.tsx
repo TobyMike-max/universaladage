@@ -24,7 +24,7 @@ const FAQS = () => {
     <AccordionItem value="item-1">
       <AccordionTrigger>What is Universaladage?</AccordionTrigger>
       <AccordionContent>
-        Universaladage Universaladage is a dynamic powerhouse in digital solutions, branding, and entertainment, committed to<br /> transforming businesses, influencers, and creatives into globally recognized brands.
+        Universaladage is a dynamic powerhouse in digital solutions, branding, and entertainment, committed to<br /> transforming businesses, influencers, and creatives into globally recognized brands.
       </AccordionContent>
     </AccordionItem>
     <AccordionItem value="item-2">
