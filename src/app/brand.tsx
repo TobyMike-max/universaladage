@@ -28,7 +28,7 @@ const logos = [
   },
   {
     id: 6,
-    image: "/logo/master-card-seeklogo.png",
+    image: "/logo/google.png",
   },
   {
     id: 7,
