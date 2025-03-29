@@ -9,6 +9,11 @@ const font = Poppins({
   weight: "400"
 });
 
+export const metadata = {
+  title: "Universaladage - Digital Branding & SEO",
+  icons: "/favicon.ico",
+};
+
 interface LayoutProps {
   children: ReactNode;
 }
@@ -17,7 +22,7 @@ export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
       <Head>
-        <title>Universaladage - Digital Branding & SEO</title>
+      <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="We build legacies that stand the test of time." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -69,7 +69,7 @@ type FormValues = {
   company_name: string;
   help: "Evaluate Universaladage for my company" | "Learn More" | "Get a Quote" | "Other";
   services:
-    | "Talent and Artist Management"
+    "Talent and Artist Management"
     | "Wikipedia and PR Services"
     | "Website Development"
     | "SEO & Advertising"

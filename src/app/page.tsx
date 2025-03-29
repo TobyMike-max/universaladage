@@ -3,12 +3,12 @@
 
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
-import ContactForm from "@/app/contact/page";
 import AnimatedSection from "@/components/AnimatedSection";
 import SliderOne from "@/components/ui/Slider";
 import { useRef } from "react";
 import FAQS from "./faq";
 import Footer from "./footer";
+import Brands from "./brand";
 
 export default function Home() {
 
@@ -36,30 +36,36 @@ export default function Home() {
   return (
     <div> {/*className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]"*/}
       <main> {/*className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start" */}
-      <AnimatedSection>
-      <Hero 
-      scrollToFaq={scrollToFaq}
-      scrollToService={scrollToService}
-      />
-      </AnimatedSection>
-      
-      <AnimatedSection>
-      <div className="w-full pt-3">
-        <SliderOne />
-      </div>
-      </AnimatedSection>
-
-      <div ref={serviceRef}>
-      <AnimatedSection delay={0.3}>
-      <Services />
-      </AnimatedSection>
-      </div>
-
-      <div ref={faqRef}>
-        <AnimatedSection delay={0.5}>
-          <FAQS />
+        <AnimatedSection>
+          <Hero
+            scrollToFaq={scrollToFaq}
+            scrollToService={scrollToService}
+          />
         </AnimatedSection>
-      </div>
+
+        <AnimatedSection>
+          <div className="w-full pt-3 bg-[#D9D9D9]">
+            <SliderOne />
+          </div>
+        </AnimatedSection>
+
+        <div ref={serviceRef}>
+          <AnimatedSection delay={0.3}>
+            <Brands />
+          </AnimatedSection>
+        </div>
+
+        <div ref={serviceRef}>
+          <AnimatedSection delay={0.5}>
+            <Services />
+          </AnimatedSection>
+        </div>
+
+        <div ref={faqRef}>
+          <AnimatedSection delay={0.7}>
+            <FAQS />
+          </AnimatedSection>
+        </div>
       </main>
       <Footer />
     </div>
