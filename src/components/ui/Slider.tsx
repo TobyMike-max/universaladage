@@ -33,16 +33,19 @@ const SliderOne = () => {
         <div>
         <Slider {...settings}>
                 <div className="rounded-md px-2 md:p-10">
-                    <Image priority src="/wikipedia.jpg" alt="logo" width={600} height={100} className='rounded-2xl' />
+                    <Image priority src="/ADMIT.jpg" alt="logo" width={600} height={100} className='rounded-2xl' />
                 </div>
                 <div className="rounded-md px-2 md:p-10">
-                    <Image priority src="/instagram.jpg" alt="logo" width={600} height={100} className='rounded-2xl' />
+                    <Image priority src="/koleyewon.jpg" alt="logo" width={600} height={100} className='rounded-2xl' />
                 </div>
                 <div className="rounded-md px-2 md:p-10">
-                    <Image priority src="/publication.jpg" alt="logo" width={600} height={100} className='rounded-2xl' />
+                    <Image priority src="/KOLORADO.jpg" alt="logo" width={600} height={100} className='rounded-2xl' />
                 </div>
                 <div className="rounded-md px-2 md:p-10">
                     <Image priority src="/audiomack1.png" alt="logo" width={600} height={400} className='rounded-2xl' />
+                </div>
+                <div className="rounded-md px-2 md:p-10">
+                    <Image priority src="/kunmieofficial.jpg" alt="logo" width={600} height={400} className='rounded-2xl' />
                 </div>
                 <div className="rounded-md px-2 md:p-10">
                     <Image priority src="/audiomack2.jpg" alt="logo" width={600} height={200} className='rounded-2xl' />
