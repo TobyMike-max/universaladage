@@ -7,6 +7,25 @@ import {useMediaQuery} from 'react-responsive';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+
+const CustomPrevArrow = ({ onClick }: { onClick?: () => void }) => (
+  <button
+    onClick={onClick}
+    className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 p-3 rounded-full text-white z-10 hover:bg-opacity-75"
+  >
+    <FaChevronLeft size={24} />
+  </button>
+);
+
+const CustomNextArrow = ({ onClick }: { onClick?: () => void }) => (
+  <button
+    onClick={onClick}
+    className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 p-3 rounded-full text-white z-10 hover:bg-opacity-75"
+  >
+    <FaChevronRight size={24} />
+  </button>
+);
 
 const SliderOne = () => {
 
@@ -14,13 +33,17 @@ const SliderOne = () => {
     const isSmallScreen = useMediaQuery({ maxWidth: 767 });
 
     const settings = {
-        arrows: false,
+        dots: true,
+        arrows: true,
         infinite: true,
         slidesToShow: 3,
+        slidesToScroll: 1,
         autoplay: true,
-        speed: 4000,
+        speed: 2000,
         autoplaySpeed: 1000,
         className: 'w-full mx-auto cursor-pointer center-mode',
+        nextArrow: <CustomNextArrow />,
+        prevArrow: <CustomPrevArrow />
     }
 
     if (isMediumScreen) {

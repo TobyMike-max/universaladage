@@ -9,6 +9,7 @@ import { useRef } from "react";
 import FAQS from "./faq";
 import Footer from "./footer";
 import Brands from "./brand";
+import Artist from "./artists";
 
 export default function Home() {
 
@@ -49,20 +50,27 @@ export default function Home() {
           </div>
         </AnimatedSection>
 
-        <div ref={serviceRef}>
+        <div>
           <AnimatedSection delay={0.3}>
+          {/* max-w-6xl mx-auto */}
+            <Artist />
+          </AnimatedSection>
+        </div>
+
+        <div>
+          <AnimatedSection delay={0.5}>
             <Brands />
           </AnimatedSection>
         </div>
 
         <div ref={serviceRef}>
-          <AnimatedSection delay={0.5}>
+          <AnimatedSection delay={0.7}>
             <Services />
           </AnimatedSection>
         </div>
 
         <div ref={faqRef}>
-          <AnimatedSection delay={0.7}>
+          <AnimatedSection delay={0.9}>
             <FAQS />
           </AnimatedSection>
         </div>

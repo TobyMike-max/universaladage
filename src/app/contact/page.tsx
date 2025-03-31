@@ -41,7 +41,6 @@ const FormSchema = z.object({
   first_name: z.string(),
   last_name: z.string(),
   email: z.string().email(),
-  job_title: z.string(),
   company_name: z.string(),
   help: z.enum([
     "Evaluate Universaladage for my company",
@@ -58,14 +57,13 @@ const FormSchema = z.object({
     "Social Media Management",
   ]),
   info: z.string(),
-  terms: z.boolean(),
+  // terms: z.boolean(),
 });
 
 type FormValues = {
   first_name: string;
   last_name: string;
   email: string;
-  job_title: string;
   company_name: string;
   help: "Evaluate Universaladage for my company" | "Learn More" | "Get a Quote" | "Other";
   services:
@@ -76,7 +74,7 @@ type FormValues = {
     | "Music & Movie Distribution"
     | "Social Media Management";
   info: string;
-  terms: boolean;
+  //terms: boolean;
 };
 
 function scrollToService() {
@@ -97,18 +95,19 @@ export default function ContactForm() {
       first_name: "",
       last_name: "",
       email: "",
-      job_title: "",
       company_name: "",
       help: "Learn More",
       services: "Talent and Artist Management",
       info: "",
     },
+    
   });
+  // console.log(form.formState.errors)
+  // console.log(form.getValues())
 
   async function onSubmit(data: z.infer<typeof FormSchema>) {
     try {
       setLoading(true);
-      console.log('people');
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -128,15 +127,15 @@ export default function ContactForm() {
   }
 
   return (
-    <div className=" w-full md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden ">
+    <div className=" w-full md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden container mx-auto">
       <Navbar 
       scrollToFaq={scrollToFaq}
       scrollToService={scrollToService}
       />
-      <div className="mt-15 md:flex items-start justify-center md:py-20 px-6">
+      <div className="md:mt-15 md:flex items-start justify-center md:py-20 my-25 px-6">
         <div className="">
-          <div className="text-5xl font-medium  w-full md:w-2/3  pb-5 md:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-            Contact our sales team
+          <div className="text-5xl font-medium w-full md:w-2/3  pb-5 md:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-gray-500 to-[#FDEBA3] bg-opacity-50">
+            Contact our team
           </div>
           <div
             className="py-4 text-gray-300"
@@ -158,8 +157,8 @@ export default function ContactForm() {
               </div>
             </div>
 
-            <div className="flex gap-4  ">
-              <div className=" font-normal pb-4 ">
+            <div className="flex gap-4">
+              <div className=" font-normal pb-4">
               Distribute and amplify content across global music 
               and movie platforms <br />to tell compelling stories that 
               captivate audiences and drive influence.
@@ -178,12 +177,12 @@ export default function ContactForm() {
                   control={form.control}
                   name="first_name"
                   render={({ field }) => (
-                    <FormItem className="items-center justify-center w-full">
-                      <FormLabel className="text-sm bg-clip-text text-white bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+                    <FormItem className="items-center w-full">
+                      <FormLabel className="text-sm bg-clip-text text-white bg-gradient-to-b from-gray-500 to-[#FDEBA3] bg-opacity-50">
                         First name *
                       </FormLabel>
                       <FormControl>
-                        <Input {...field} />
+                        <Input {...field} className="w-full"/>
                       </FormControl>
                     </FormItem>
                   )}
@@ -193,8 +192,8 @@ export default function ContactForm() {
                   control={form.control}
                   name="last_name"
                   render={({ field }) => (
-                    <FormItem className="items-center justify-center w-full">
-                      <FormLabel className="text-sm bg-clip-text text-white bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+                    <FormItem className="items-center w-full">
+                      <FormLabel className="text-sm bg-clip-text text-white bg-gradient-to-b from-gray-500 to-[#FDEBA3] bg-opacity-50">
                         Last name *
                       </FormLabel>
                       <FormControl>
@@ -209,12 +208,12 @@ export default function ContactForm() {
                 control={form.control}
                 name="email"
                 render={({ field }) => (
-                  <FormItem className="items-center justify-center w-full">
-                    <FormLabel className="text-sm bg-clip-text text-white bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+                  <FormItem className="items-center w-full">
+                    <FormLabel className="text-sm bg-clip-text text-white bg-gradient-to-b from-gray-500 to-[#FDEBA3] bg-opacity-50">
                       Email *
                     </FormLabel>
                     <FormControl>
-                      <Input {...field} />
+                      <Input {...field} className="w-full"/>
                     </FormControl>
                   </FormItem>
                 )}
@@ -224,7 +223,7 @@ export default function ContactForm() {
                 control={form.control}
                 name="company_name"
                 render={({ field }) => (
-                  <FormItem className="items-center justify-center w-full">
+                  <FormItem className="items-center w-full">
                     <FormLabel className="text-sm bg-clip-text text-white bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
                       Company name?
                     </FormLabel>
@@ -239,7 +238,7 @@ export default function ContactForm() {
                 control={form.control}
                 name="services"
                 render={({ field }) => (
-                  <FormItem className="items-center justify-center w-full">
+                  <FormItem className="items-center w-full">
                     <FormLabel className="text-sm bg-clip-text text-white bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
                     Services you are interested in
                     </FormLabel>
@@ -273,7 +272,7 @@ export default function ContactForm() {
                 control={form.control}
                 name="help"
                 render={({ field }) => (
-                  <FormItem className="items-center justify-center  w-full">
+                  <FormItem className="items-center w-full">
                     <FormLabel className="text-sm bg-clip-text text-white bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
                       How can we help ?
                     </FormLabel>
@@ -306,7 +305,7 @@ export default function ContactForm() {
                 control={form.control}
                 name="info"
                 render={({ field }) => (
-                  <FormItem className="items-center justify-center w-full">
+                  <FormItem className="items-center w-full">
                     <FormLabel className="text-sm bg-clip-text text-white bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
                       Anything else ?
                     </FormLabel>
@@ -320,13 +319,7 @@ export default function ContactForm() {
               <div className="flex gap-4 items-center">
                 <div>
                   <Checkbox
-                    className="
-                outline
-                border-2
-                text-sm
-                font-light
-                bg-clip-text text-white bg-gradient-to-b from-neutral-50 to-neutral-400
-                "
+                    className="outline border-2 text-sm font-light bg-clip-text text-white bg-gradient-to-b from-neutral-50 to-neutral-400"
                   />
                 </div>
                 <div className="text-xs font-light  md:w-3/4 mb-1 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
