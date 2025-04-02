@@ -60,7 +60,7 @@ const Navbar: React.FC<NavbarProps> = ({
             exit={{ opacity: 0, y: '-100%' }}
             transition={{ duration: 0.5 }}
           >
-            <Link href="/" className="block mt-4 py-6 px-4 hover-effect text-black">Home</Link>
+            <Link href="/" className="block mt-4 py-6 px-4 hover-effect text-black">Spotlight</Link>
             <div onClick={scrollToService} className="block py-6 px-4 hover-effect text-black">Services</div>
             <Link href="/contact" className="block py-6 px-4 hover-effect text-black">Contact</Link>
             <div onClick={scrollToFaq} className="block py-6 px-4 hover-effect text-black">FAQ</div>

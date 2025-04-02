@@ -1,6 +1,5 @@
 "use client"
 
-
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -9,7 +8,6 @@ import { useRef } from "react";
 import FAQS from "./faq";
 import Footer from "./footer";
 import Brands from "./brand";
-import Artist from "./artists";
 
 export default function Home() {
 
@@ -50,12 +48,12 @@ export default function Home() {
           </div>
         </AnimatedSection>
 
-        <div>
+        {/*<div>
           <AnimatedSection delay={0.3}>
-          {/* max-w-6xl mx-auto */}
+          // max-w-6xl mx-auto 
             <Artist />
           </AnimatedSection>
-        </div>
+        </div> */}
 
         <div>
           <AnimatedSection delay={0.5}>
