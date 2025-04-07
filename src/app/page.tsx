@@ -8,6 +8,7 @@ import { useRef } from "react";
 import FAQS from "./faq";
 import Footer from "./footer";
 import Brands from "./brand";
+import Headlines from "@/components/Headline";
 
 export default function Home() {
 
@@ -33,7 +34,7 @@ export default function Home() {
   }
 
   return (
-    <div> {/*className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]"*/}
+    <div className="container"> {/*className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]"*/}
       <main> {/*className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start" */}
         <AnimatedSection>
           <Hero
@@ -54,6 +55,12 @@ export default function Home() {
             <Artist />
           </AnimatedSection>
         </div> */}
+
+        <div>
+          <AnimatedSection delay={0.3}>
+            <Headlines />
+          </AnimatedSection>
+        </div>
 
         <div>
           <AnimatedSection delay={0.5}>

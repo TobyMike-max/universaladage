@@ -6,6 +6,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { cn } from "@/lib/utils";
 
+
+import { Playfair_Display } from 'next/font/google';
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '700'], // adjust as needed
+  variable: '--font-playfair',
+  display: 'swap',
+});
+
 interface HeroProps {
   scrollToService: () => void
   scrollToFaq: () => void
@@ -13,12 +23,39 @@ interface HeroProps {
 
 const slides = [
   {
+    src: '/UZOR-ARUKUWE.png',
+    artist: 'Uzor Arukwe',
+    leftText: 'AMVCA Nominee',
+    leftParagraph: '2025',
+    leftImg: '/uzor_arukwe.jpg',
+    rightParagraph: 'Best supporting actor',
+    rightImg: '/wikipedia.jpg',
+  },
+  {
+    src: '/NAZO-EKEZIE.png',
+    artist: 'Nazo Ekezie',
+    leftText: 'City People Movie Award Winner',
+    leftParagraph: '2017',
+    leftImg: '/nazo_ezekie.jpg',
+    rightParagraph: 'Best Upcoming Actress',
+    rightImg: '/nazo2.jpg',
+  },
+  {
     src: '/ERMA.png',
     artist: 'ERMA',
     leftText: 'DYANA',
     leftParagraph: '2025',
     leftImg: '/audiomack1.png',
     rightParagraph: 'DYANA Music Video',
+    rightImg: '/audiomack1.png',
+  },
+  {
+    src: '/MR-FROSH.png',
+    artist: 'Mr Frosh',
+    leftText: 'Remedy',
+    leftParagraph: '2024',
+    leftImg: '/frosh.webp',
+    rightParagraph: 'Music that transcends boundaries.',
     rightImg: '/audiomack1.png',
   },
   {
@@ -31,15 +68,6 @@ const slides = [
     rightImg: '/audiomack1.png',
   },
   {
-    src: '/MR-FROSH.png',
-    artist: 'Mr Frosh',
-    leftText: 'Elevate Your Vibe',
-    leftParagraph: 'Unlock new sonic experiences.',
-    leftImg: '/audiomack1.png',
-    rightParagraph: 'Music that transcends boundaries.',
-    rightImg: '/audiomack1.png',
-  },
-  {
     src: '/MR-HENRY.png',
     artist: 'Mr Henry Agbai',
     leftText: 'Elevate Your Vibe',
@@ -48,33 +76,11 @@ const slides = [
     rightParagraph: 'Music that transcends.',
     rightImg: '/henry_agbai.jpg',
   },
-  {
-    src: '/NAZO-EKEZIE.png',
-    artist: 'Nazo Ekezie',
-    leftText: 'Elevate Your Vibe',
-    leftParagraph: 'Unlock new experiences.',
-    leftImg: '/audiomack1.png',
-    rightParagraph: 'Music that transcends.',
-    rightImg: '/audiomack1.png',
-  },
-  {
-    src: '/UZOR-ARUKUWE.png',
-    artist: 'Uzor Arukwe',
-    leftText: 'Elevate Your Vibe',
-    leftParagraph: 'Unlock new experiences.',
-    leftImg: '/uzor_arukwe.jpg',
-    rightParagraph: 'Music that transcends',
-    rightImg: '/wikipedia.jpg',
-  },
 ];
-
-
 
 const Hero = ({ scrollToFaq, scrollToService }: HeroProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
-  const [animatedLetters, setAnimatedLetters] = useState<string[]>([]);
-
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -89,28 +95,6 @@ const Hero = ({ scrollToFaq, scrollToService }: HeroProps) => {
     return () => clearInterval(interval);
   }, []);
 
-
-  // Animate artist name letter by letter in random order
-  useEffect(() => {
-    const artistName = slides[currentIndex].artist;
-    let letters: string[] = artistName.split('');
-    let newLetters: string[] = Array(letters.length).fill('');
-
-    let index = 0;
-    const interval = setInterval(() => {
-      if (index < letters.length) {
-        newLetters[index] = letters[index]; // Add letter one by one
-        setAnimatedLetters([...newLetters]);
-        index++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 150); // Delay between letters
-
-    return () => clearInterval(interval);
-  }, [currentIndex]);
-
-
   return (
     <div className="relative h-screen w-full text-center text-light text-white overflow-hidden">
 
@@ -124,7 +108,7 @@ const Hero = ({ scrollToFaq, scrollToService }: HeroProps) => {
           <motion.div
             key={slide.artist}
             className={cn(
-              'absolute inset-0 w-full h-full',
+              'absolute inset-0 w-full h-full animate-fadeInOut',
               index === currentIndex ? 'opacity-100' : 'opacity-0',
             )}
             style={{
@@ -137,7 +121,7 @@ const Hero = ({ scrollToFaq, scrollToService }: HeroProps) => {
             animate={{
               opacity: index === currentIndex ? 1 : 0,
               scale: index === currentIndex ? 1.2 : 1,
-            }} 
+            }}
             exit={{ opacity: 0, scale: 1 }}
             transition={{
               duration: 8, // Adjust duration for the slow scaling effect
@@ -146,12 +130,12 @@ const Hero = ({ scrollToFaq, scrollToService }: HeroProps) => {
         ))}
 
         {/* Left Image and Text */}
-        <div className="absolute left-80 top-[19%] flex flex-col items-start gap-3">
+        <div className="absolute left-80 top-[20%] flex flex-col items-start gap-3">
           <motion.img
             src={slides[currentIndex].leftImg} // Replace with the actual path to your left image
             alt="Left Image"
             className={cn(
-              'w-40 h-50 w-20 h-25 rounded-lg object-cover',
+              'w-50 h-50 object-cover',
               transitioning ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0'
             )}
             initial={{ scaleX: 0, opacity: 0 }}
@@ -166,7 +150,7 @@ const Hero = ({ scrollToFaq, scrollToService }: HeroProps) => {
           />
           <p
             className={cn(
-              'text-white text-xl font-bold transition-transform duration-[3000ms] delay-[30ms]',
+              'text-[gold] text-base font-bold transition-transform duration-[3000ms] delay-[30ms]',
               transitioning ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             )}
           >
@@ -174,7 +158,7 @@ const Hero = ({ scrollToFaq, scrollToService }: HeroProps) => {
           </p>
           <p
             className={cn(
-              'text-white text-lg transition-transform duration-[3000ms] delay-[30ms]',
+              'text-white text-sm pt-0 mt-0 font-extrabold transition-transform duration-[3000ms] delay-[30ms]',
               transitioning ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             )}
           >
@@ -182,11 +166,34 @@ const Hero = ({ scrollToFaq, scrollToService }: HeroProps) => {
           </p>
         </div>
 
+        {/* Center Text */}
+        <motion.h1
+          key={slides[currentIndex].artist}
+          className="absolute bottom-20 text-2xl md:text-5xl font-bold tracking-wide text-white z-20 font-playfair"
+          initial={{
+            opacity: 0,
+            filter: 'blur(8px)',
+            color: '#d4af37', // Light gold
+          }}
+          animate={{
+            opacity: 1,
+            filter: 'blur(0px)',
+            color: '#ffffff', // Full white
+          }}
+          transition={{
+            duration: 4,
+            ease: 'easeInOut',
+          }}
+        >
+          {slides[currentIndex].artist}
+        </motion.h1>
+
+
         {/* Right Image and Text */}
-        <div className="absolute right-80 bottom-[19%] flex flex-col items-end gap-3">
+        <div className="absolute right-80 bottom-[20%] flex flex-col items-end gap-3">
           <p
             className={cn(
-              'text-white text-lg transition-transform duration-[3000ms] delay-[30ms]',
+              'text-white text-lg font-bold transition-transform duration-[3000ms] delay-[30ms]',
               transitioning ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'
             )}
           >
@@ -196,7 +203,7 @@ const Hero = ({ scrollToFaq, scrollToService }: HeroProps) => {
             src={slides[currentIndex].rightImg} // Replace with the actual path to your right image
             alt="Right Image"
             className={cn(
-              'w-32 h-40 rounded-lg object-cover',
+              'w-45 h-25 object-cover',
               transitioning ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0'
             )}
             initial={{ scaleX: 0, opacity: 0 }}
@@ -211,20 +218,6 @@ const Hero = ({ scrollToFaq, scrollToService }: HeroProps) => {
           />
 
         </div>
-
-        {/* Artist Name Appears Letter by Letter */}
-        <div className="absolute bottom-16 text-white text-3xl font-bold tracking-widest flex gap-1">
-          {animatedLetters.map((letter, i) => (
-            <span
-              key={i}
-              className="opacity-0 animate-fadeInOut"
-              style={{ animationDelay: `${i * 0.1}s` }}
-            >
-              {letter}
-            </span>
-          ))}
-        </div>
-
 
         {/* Dots Navigation */}
         <div className="absolute bottom-8 flex gap-3">
