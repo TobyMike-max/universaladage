@@ -7,18 +7,10 @@ import Link from 'next/link';
 import { cn } from "@/lib/utils";
 
 
-import { Playfair_Display } from 'next/font/google';
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  weight: ['400', '700'], // adjust as needed
-  variable: '--font-playfair',
-  display: 'swap',
-});
-
 interface HeroProps {
   scrollToService: () => void
   scrollToFaq: () => void
+  scrollToHeadline: () => void
 }
 
 const slides = [
@@ -27,58 +19,64 @@ const slides = [
     artist: 'Uzor Arukwe',
     leftText: 'AMVCA Nominee',
     leftParagraph: '2025',
-    leftImg: '/uzor_arukwe.jpg',
+    leftImg: '/uzor_arukwe.png',
     rightParagraph: 'Best supporting actor',
-    rightImg: '/wikipedia.jpg',
+    rightImg: undefined,
+    link: 'https://en.wikipedia.org/wiki/Uzor_Arukwe',
   },
   {
     src: '/NAZO-EKEZIE.png',
     artist: 'Nazo Ekezie',
     leftText: 'City People Movie Award Winner',
     leftParagraph: '2017',
-    leftImg: '/nazo_ezekie.jpg',
+    leftImg: '/nazo_ezekie.png',
     rightParagraph: 'Best Upcoming Actress',
-    rightImg: '/nazo2.jpg',
+    rightImg: undefined,
+    link: 'https://en.wikipedia.org/wiki/Nazo_Ekezie',
   },
   {
     src: '/ERMA.png',
     artist: 'ERMA',
     leftText: 'DYANA',
     leftParagraph: '2025',
-    leftImg: '/audiomack1.png',
+    leftImg: '/erma_pic.png',
     rightParagraph: 'DYANA Music Video',
-    rightImg: '/audiomack1.png',
+    rightImg: undefined,
+    link: 'https://app.chartmetric.com/artist/12015611',
   },
   {
     src: '/MR-FROSH.png',
     artist: 'Mr Frosh',
     leftText: 'Remedy',
     leftParagraph: '2024',
-    leftImg: '/frosh.webp',
+    leftImg: '/frosh_pic_1.jpg',
     rightParagraph: 'Music that transcends boundaries.',
-    rightImg: '/audiomack1.png',
+    rightImg: undefined,
+    link: '',
   },
   {
     src: '/ecious_obd_9_3000x2000.jpg',
     artist: 'ECIOUS OBD',
-    leftText: 'Feel the Energy',
-    leftParagraph: 'Dive into creativity',
-    leftImg: '/audiomack1.png',
+    leftText: 'HP',
+    leftParagraph: '2025',
+    leftImg: 'ecious_pic_1.png',
     rightParagraph: 'Every beat tells a story.',
-    rightImg: '/audiomack1.png',
+    rightImg: undefined,
+    link: 'https://app.chartmetric.com/artist/12431287',
   },
   {
     src: '/MR-HENRY.png',
     artist: 'Mr Henry Agbai',
-    leftText: 'Elevate Your Vibe',
-    leftParagraph: 'Unlock new experiences.',
-    leftImg: '/henry_agbai.jpg',
-    rightParagraph: 'Music that transcends.',
-    rightImg: '/henry_agbai.jpg',
+    leftText: 'AMVCA Participant',
+    leftParagraph: '2022',
+    leftImg: '/henry_agbai_pic.png',
+    rightParagraph: '',
+    rightImg: undefined,
+    link: 'https://wikitia.com/wiki/Mr_Henry_Agbai',
   },
 ];
 
-const Hero = ({ scrollToFaq, scrollToService }: HeroProps) => {
+const Hero = ({ scrollToFaq, scrollToService, scrollToHeadline }: HeroProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
 
@@ -101,7 +99,8 @@ const Hero = ({ scrollToFaq, scrollToService }: HeroProps) => {
       <div className="relative z-60">
         <Navbar
           scrollToFaq={scrollToFaq}
-          scrollToService={scrollToService} />
+          scrollToService={scrollToService}
+          scrollToHeadline={scrollToHeadline} />
       </div>
       <section className="relative w-full h-screen overflow-hidden flex items-center justify-center">
         {slides.map((slide, index) => (
@@ -148,6 +147,7 @@ const Hero = ({ scrollToFaq, scrollToService }: HeroProps) => {
               delay: 0.03, // Matches the delay of the text animation
             }}
           />
+          <Link href={slides[currentIndex].link} target="_blank" rel="noopener noreferrer">
           <p
             className={cn(
               'text-[gold] text-base font-bold transition-transform duration-[3000ms] delay-[30ms]',
@@ -164,6 +164,7 @@ const Hero = ({ scrollToFaq, scrollToService }: HeroProps) => {
           >
             {slides[currentIndex].leftParagraph}
           </p>
+          </Link>
         </div>
 
         {/* Center Text */}
@@ -190,6 +191,7 @@ const Hero = ({ scrollToFaq, scrollToService }: HeroProps) => {
 
 
         {/* Right Image and Text */}
+        {slides[currentIndex].rightImg !== undefined ? 
         <div className="absolute right-80 bottom-[20%] flex flex-col items-end gap-3">
           <p
             className={cn(
@@ -206,6 +208,7 @@ const Hero = ({ scrollToFaq, scrollToService }: HeroProps) => {
               'w-45 h-25 object-cover',
               transitioning ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0'
             )}
+            style={{ backgroundPosition: 'center 40%'}}
             initial={{ scaleX: 0, opacity: 0 }}
             animate={{
               scaleX: transitioning ? 1 : 0,
@@ -215,9 +218,9 @@ const Hero = ({ scrollToFaq, scrollToService }: HeroProps) => {
               duration: 3, // Matches the duration of the text animation
               delay: 0.03, // Matches the delay of the text animation
             }}
-          />
-
-        </div>
+          /> 
+          </div> : <></>
+}
 
         {/* Dots Navigation */}
         <div className="absolute bottom-8 flex gap-3">

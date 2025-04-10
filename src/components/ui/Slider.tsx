@@ -64,15 +64,6 @@ const SliderOne = () => {
                 <div className="rounded-md px-2 md:p-10">
                     <Image priority src="/KOLORADO.jpg" alt="logo" width={600} height={100} className='rounded-2xl' />
                 </div>
-                <div className="rounded-md px-2 md:p-10">
-                    <Image priority src="/audiomack1.png" alt="logo" width={600} height={400} className='rounded-2xl' />
-                </div>
-                <div className="rounded-md px-2 md:p-10">
-                    <Image priority src="/kunmieofficial.jpg" alt="logo" width={600} height={400} className='rounded-2xl' />
-                </div>
-                <div className="rounded-md px-2 md:p-10">
-                    <Image priority src="/audiomack2.jpg" alt="logo" width={600} height={200} className='rounded-2xl' />
-                </div>
         </Slider>
         </div>
     );

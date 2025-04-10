@@ -10,10 +10,18 @@ import Footer from "./footer";
 import Brands from "./brand";
 import Headlines from "@/components/Headline";
 
+
+import { Poppins } from 'next/font/google'
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+})
+
 export default function Home() {
 
   const websiteDesignRef = useRef<HTMLDivElement>(null);
-  const brandsRef = useRef<HTMLDivElement>(null);
+  const headlineRef = useRef<HTMLDivElement>(null);
   const serviceRef = useRef<HTMLDivElement>(null);
   const faqRef = useRef<HTMLDivElement>(null);
 
@@ -21,8 +29,8 @@ export default function Home() {
     websiteDesignRef.current?.scrollIntoView({ behavior: "smooth" })
   }
 
-  const scrollToBrandDesign = () => {
-    brandsRef.current?.scrollIntoView({ behavior: "smooth" })
+  const scrollToHeadline = () => {
+    headlineRef.current?.scrollIntoView({ behavior: "smooth" })
   }
 
   const scrollToService = () => {
@@ -34,12 +42,13 @@ export default function Home() {
   }
 
   return (
-    <div className="container"> {/*className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]"*/}
+    <div className={`container ${poppins.className}`}> {/*className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]"*/}
       <main> {/*className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start" */}
         <AnimatedSection>
           <Hero
             scrollToFaq={scrollToFaq}
             scrollToService={scrollToService}
+            scrollToHeadline={scrollToHeadline}
           />
         </AnimatedSection>
 
@@ -56,7 +65,7 @@ export default function Home() {
           </AnimatedSection>
         </div> */}
 
-        <div>
+        <div ref={headlineRef}>
           <AnimatedSection delay={0.3}>
             <Headlines />
           </AnimatedSection>

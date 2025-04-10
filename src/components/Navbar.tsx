@@ -9,11 +9,13 @@ import { motion } from "framer-motion";
 interface NavbarProps {
   scrollToService: () => void,
   scrollToFaq: () => void,
+  scrollToHeadline: () => void,
 }
 
 const Navbar: React.FC<NavbarProps> = ({
   scrollToFaq,
   scrollToService,
+  scrollToHeadline,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -41,6 +43,7 @@ const Navbar: React.FC<NavbarProps> = ({
           <div className="hidden md:flex text-[gray] cursor-pointer text-3xl md:text-lg items-center space-x-20 font-medium">
             <Link href="/" className="hover:text-gold hover-effect">Spotlight</Link>
             <div onClick={scrollToService} className="hover:text-gold hover-effect">Services</div>
+            <div onClick={scrollToHeadline} className="hover:text-gold hover-effect">Headline</div>
             <div onClick={scrollToFaq} className="hover:text-gold hover-effect">FAQ</div>
             <div className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
               <Link href="/contact" className="hover:text-gold hover-effect">Contact us</Link>
@@ -58,6 +61,7 @@ const Navbar: React.FC<NavbarProps> = ({
           >
             <Link href="/" className="block mt-4 py-6 px-4 hover-effect text-black">Spotlight</Link>
             <div onClick={scrollToService} className="block py-6 px-4 hover-effect text-black">Services</div>
+            <div onClick={scrollToHeadline} className="block py-6 px-4 hover-effect text-black">Headline</div>
             <Link href="/contact" className="block py-6 px-4 hover-effect text-black">Contact</Link>
             <div onClick={scrollToFaq} className="block py-6 px-4 hover-effect text-black">FAQ</div>
           </motion.div>
