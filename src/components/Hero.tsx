@@ -52,7 +52,7 @@ const slides = [
     leftImg: '/frosh_pic_1.jpg',
     rightParagraph: 'Music that transcends boundaries.',
     rightImg: undefined,
-    link: '',
+    link: 'https://g.co/kgs/G7isBvN',
   },
   {
     src: '/ecious_obd_9_3000x2000.jpg',
@@ -62,7 +62,7 @@ const slides = [
     leftImg: 'ecious_pic_1.png',
     rightParagraph: 'Every beat tells a story.',
     rightImg: undefined,
-    link: 'https://app.chartmetric.com/artist/12431287',
+    link: 'https://g.co/kgs/v92dJxv',
   },
   {
     src: '/MR-HENRY.png',
