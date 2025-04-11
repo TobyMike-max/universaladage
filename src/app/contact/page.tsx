@@ -77,14 +77,6 @@ type FormValues = {
   //terms: boolean;
 };
 
-function scrollToService() {
-  // Implement the scroll to service functionality here
-}
-
-function scrollToFaq() {
-  // Implement the scroll to FAQ functionality here
-}
-
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -129,8 +121,10 @@ export default function ContactForm() {
   return (
     <div className=" w-full md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden container mx-auto">
       <Navbar 
-      scrollToFaq={scrollToFaq}
-      scrollToService={scrollToService}
+      scrollToFaq={() => {}}
+      scrollToService={() => {}}
+      scrollToHeadline={() => {}}
+
       />
       <div className="md:mt-15 md:flex items-start justify-center md:py-20 my-25 px-6">
         <div className="">
