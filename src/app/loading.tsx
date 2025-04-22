@@ -13,7 +13,7 @@ export default function Loading() {
         transition={{ duration: 0.6 }}
       >
         <Image
-          src="/logo.png" // Replace with your actual logo path
+          src="/UA-logo-typo-gray.png" // Replace with your actual logo path
           alt="Logo"
           width={80}
           height={80}
