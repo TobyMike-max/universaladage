@@ -20,7 +20,7 @@ const Navbar: React.FC<NavbarProps> = ({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-90 bg-dark text-light shadow-lg absolute top-0 left-0 w-full bg-transparent text-white hero-bg">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-90 bg-dark text-light shadow-lg absolute top-0 left-0 w-full bg-transparent text-white hero-bg container">
       <div className="max-w-screen mx-auto items-center justify-between p-4 px-4 sm:px-6 px-4 md:px-6 lg:px-8"> {/*Edit the spacing to the right and left of the navbar*/}
         <div className="flex justify-between h-16">
           <div className="flex items-center gap-1 mt-3">{/*flex items-center gap-2*/}
@@ -34,17 +34,18 @@ const Navbar: React.FC<NavbarProps> = ({
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-light focus:outline-none">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-light focus:outline-none text-2xl font-medium">
               ☰
             </button>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex text-[gray] cursor-pointer text-3xl md:text-lg items-center space-x-20 font-medium">
+          <div className="hidden md:flex text-[white] cursor-pointer md:text-lg text-sm items-center space-x-9 font-medium">
             <Link href="/" className="hover:text-gold hover-effect">Spotlight</Link>
+            <div onClick={scrollToHeadline} className="hover:text-gold hover-effect">Headline</div>            
             <div onClick={scrollToService} className="hover:text-gold hover-effect">Services</div>
-            <div onClick={scrollToHeadline} className="hover:text-gold hover-effect">Headline</div>
-            <div onClick={scrollToFaq} className="hover:text-gold hover-effect">FAQ</div>
+            {/* <div onClick={scrollToFaq} className="hover:text-gold hover-effect">FAQ</div> */}
+            <Link href="/nextup" className="hover:text-gold hover-effect">Nextup</Link>
             <div className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
               <Link href="/contact" className="hover:text-gold hover-effect">Contact us</Link>
             </div>

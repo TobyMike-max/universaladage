@@ -2,7 +2,7 @@ import "./globals.css";
 import type { ReactNode } from "react";
 import Head from "next/head";
 import { Poppins } from "next/font/google";
-// import Navbar from "@/components/Navbar";
+import Footer from "@/app/footer";
 
 const font = Poppins({
   subsets: ["latin"],
@@ -32,6 +32,7 @@ export default function RootLayout({ children }: LayoutProps) {
       <body className={font.className}>
         {/* <Navbar /> */}
         {children}
+        <Footer />
       </body>
     </html>
   );

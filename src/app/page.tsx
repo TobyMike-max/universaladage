@@ -6,7 +6,6 @@ import AnimatedSection from "@/components/AnimatedSection";
 import SliderOne from "@/components/ui/Slider";
 import { useRef } from "react";
 import FAQS from "./faq";
-import Footer from "./footer";
 import Brands from "./brand";
 import Headlines from "@/components/Headline";
 
@@ -89,7 +88,6 @@ export default function Home() {
           </AnimatedSection>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

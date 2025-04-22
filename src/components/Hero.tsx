@@ -130,7 +130,7 @@ const Hero = ({ scrollToFaq, scrollToService, scrollToHeadline }: HeroProps) => 
 
         {/* Left Image and Text */}
         <div className="absolute left-80 top-[20%] flex flex-col items-start gap-3">
-          <motion.img
+          {/* <motion.img
             src={slides[currentIndex].leftImg} // Replace with the actual path to your left image
             alt="Left Image"
             className={cn(
@@ -146,12 +146,12 @@ const Hero = ({ scrollToFaq, scrollToService, scrollToHeadline }: HeroProps) => 
               duration: 3, // Matches the duration of the text animation
               delay: 0.03, // Matches the delay of the text animation
             }}
-          />
+          /> */}
           <Link href={slides[currentIndex].link} target="_blank" rel="noopener noreferrer">
           <p
             className={cn(
-              'text-[gold] text-base font-bold transition-transform duration-[3000ms] delay-[30ms]',
-              transitioning ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+              'text-[gold] md:text-xl text-base font-bold transition-transform duration-[3000ms] delay-[30ms]',
+              transitioning ? 'translate-y-10 opacity-100' : 'translate-y-50 opacity-0'
             )}
           >
             {slides[currentIndex].leftText}
@@ -159,7 +159,7 @@ const Hero = ({ scrollToFaq, scrollToService, scrollToHeadline }: HeroProps) => 
           <p
             className={cn(
               'text-white text-sm pt-0 mt-0 font-extrabold transition-transform duration-[3000ms] delay-[30ms]',
-              transitioning ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+              transitioning ? 'translate-y-10 opacity-100' : 'translate-y-50 opacity-0'
             )}
           >
             {slides[currentIndex].leftParagraph}

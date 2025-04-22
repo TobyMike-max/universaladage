@@ -119,16 +119,15 @@ export default function ContactForm() {
   }
 
   return (
-    <div className=" w-full md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden container mx-auto">
+    <div className="w-full md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden container">
       <Navbar 
       scrollToFaq={() => {}}
       scrollToService={() => {}}
       scrollToHeadline={() => {}}
-
       />
       <div className="md:mt-15 md:flex items-start justify-center md:py-20 my-25 px-6">
         <div className="">
-          <div className="text-5xl font-medium w-full md:w-2/3  pb-5 md:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-gray-500 to-[#FDEBA3] bg-opacity-50">
+          <div className="text-5xl font-medium w-full md:w-2/3  pb-5 md:text-7xl bg-clip-text text-white bg-opacity-50">
             Contact our team
           </div>
           <div
