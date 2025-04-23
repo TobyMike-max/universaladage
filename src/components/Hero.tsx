@@ -47,8 +47,8 @@ const slides = [
   {
     src: '/MR-FROSH.png',
     artist: 'Mr Frosh',
-    leftText: 'Remedy',
-    leftParagraph: '2024',
+    leftText: 'Better Plan',
+    leftParagraph: '2025',
     leftImg: '/frosh_pic_1.jpg',
     rightParagraph: 'Music that transcends boundaries.',
     rightImg: undefined,
@@ -67,8 +67,8 @@ const slides = [
   {
     src: '/MR-HENRY.png',
     artist: 'Mr Henry Agbai',
-    leftText: 'AMVCA Participant',
-    leftParagraph: '2022',
+    leftText: 'Executive Film Producer',
+    leftParagraph: '2025',
     leftImg: '/henry_agbai_pic.png',
     rightParagraph: '',
     rightImg: undefined,

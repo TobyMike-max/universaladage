@@ -7,16 +7,16 @@ import Link from 'next/link'
 
 const artists = [
     {
-        name: 'Ecious OBD',
-        genre: 'Afro-Fusion',
-        image: '/ecious_pic.png',
-        bio: 'Soulful voice, storytelling lyrics. One to watch.',
-        link: 'https://g.co/kgs/v92dJxv'
+        name: 'Gift Godwins',
+        genre: 'Actress',
+        image: '/Black_dress_2.jpg',
+        bio: 'Soulful acting, realistic storyteller. One to watch.',
+        link: '/'
     },
     {
         name: 'Kitay',
-        genre: 'Hip-Hop',
-        image: '/KOLORADO.jpg',
+        genre: 'Afro-Beat Artist',
+        image: '/ogogoro_cover_art.jpg',
         bio: 'Blending smooth hip-hop with a futuristic sound.',
         link: '/'
     },
@@ -52,6 +52,7 @@ function NextUpPage() {
                                             alt={artist.name}
                                             fill
                                             className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                            style={{ backgroundPosition: 'center 30%'}}
                                         />
                                     </div>
                                     <div className="p-6">
@@ -59,7 +60,7 @@ function NextUpPage() {
                                         <p className="text-sm text-gray-400 mb-2">{artist.genre}</p>
                                         <p className="text-base text-gray-300 mb-4">{artist.bio}</p>
                                         <Link href={artist.link} className="text-white hover:underline">
-                                            Listen Now &rarr;
+                                            See More &rarr;
                                         </Link>
                                     </div>
                                 </motion.div>
