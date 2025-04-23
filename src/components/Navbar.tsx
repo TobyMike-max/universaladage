@@ -54,17 +54,17 @@ const Navbar: React.FC<NavbarProps> = ({
 
         {/* Mobile Menu Dropdown */}
         {isOpen && (
-          <motion.div className="md:hidden w-screen h-screen bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 text-slate-300 absolute top-20 left-0 right-0 z-50 rounded-t-3xl"
+          <motion.div className="md:hidden w-screen h-screen bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 flex flex-col items-center text-slate-300 absolute top-20 left-0 right-0 z-50 rounded-t-3xl"
             initial={{ opacity: 0, y: '-80%' }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: '-100%' }}
             transition={{ duration: 0.5 }}
           >
-            <Link href="/" className="block mt-4 py-6 px-4 hover-effect text-black">Spotlight</Link>
-            <div onClick={scrollToService} className="block py-6 px-4 hover-effect text-black">Services</div>
-            <div onClick={scrollToHeadline} className="block py-6 px-4 hover-effect text-black">Headline</div>
-            <Link href="/contact" className="block py-6 px-4 hover-effect text-black">Contact</Link>
-            <Link href="/nextup" className="hover:text-gold hover-effect">Nextup</Link>
+            <Link onClick={() => setIsOpen(false)} href="/" className="block mt-4 py-6 px-4 hover:text-gold text-black">Spotlight</Link>
+            <div onClick={() => {scrollToService(); setIsOpen(false);}} className="block py-6 px-4 hover-effect text-black">Services</div>
+            <div onClick={() => {setIsOpen(false); scrollToHeadline()}} className="block py-6 px-4 hover-effect text-black">Headline</div>
+            <Link onClick={() => setIsOpen(false)} href="/contact" className="block py-6 px-4 hover-effect text-black">Contact</Link>
+            <Link onClick={() => setIsOpen(false)} href="/nextup" className="block py-6 px-4 hover-effect text-black">Nextup</Link>
             {/* <div onClick={scrollToFaq} className="block py-6 px-4 hover-effect text-black">FAQ</div> */}
           </motion.div>
         )}

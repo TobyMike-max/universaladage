@@ -38,7 +38,7 @@ export default function Loading() {
         }}
         className="text-lg text-gray-300"
       >
-        Loading artists...
+        Loading Home Page...
       </motion.p>
     </div>
   )

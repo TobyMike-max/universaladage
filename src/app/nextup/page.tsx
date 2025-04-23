@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 const artists = [
     {
-        name: 'Gift Godwins',
+        name: 'Gift Godwin',
         genre: 'Actress',
         image: '/Black_dress_2.jpg',
         bio: 'Soulful acting, realistic storyteller. One to watch.',

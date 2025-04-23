@@ -74,7 +74,18 @@ const slides = [
     rightImg: undefined,
     link: 'https://wikitia.com/wiki/Mr_Henry_Agbai',
   },
+  {
+    src: '/kitay.jpg', 
+    artist: 'Kitay',
+    leftText: 'Artist',
+    leftParagraph: '2025',
+    leftImg: '/henry_agbai_pic.png',
+    rightParagraph: '',
+    rightImg: undefined,
+    link: 'https://wikitia.com/wiki/Mr_Henry_Agbai',
+  },
 ];
+{/*kitay picture*/}
 
 const Hero = ({ scrollToFaq, scrollToService, scrollToHeadline }: HeroProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -129,7 +140,7 @@ const Hero = ({ scrollToFaq, scrollToService, scrollToHeadline }: HeroProps) => 
         ))}
 
         {/* Left Image and Text */}
-        <div className="absolute left-80 top-[20%] flex flex-col items-start gap-3">
+        <div className="absolute md:left-80 left-50 top-[20%] flex flex-col items-start gap-3">
           {/* <motion.img
             src={slides[currentIndex].leftImg} // Replace with the actual path to your left image
             alt="Left Image"
