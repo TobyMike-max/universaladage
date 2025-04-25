@@ -1,7 +1,7 @@
 
 export const headlineData = [
     {
-      imageSrc: '/audiomack1.png',
+      imageSrc: '/erma_2.png',
       imageAlt: 'DYNA Music Video',
       videoUrl: 'https://www.youtube.com/watch?v=pUwDy_GHyRk',
       header: 'DYNA',

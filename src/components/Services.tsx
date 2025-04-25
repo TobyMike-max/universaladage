@@ -20,7 +20,7 @@ const services = [
 const Services = () => {
   return (
     <section>
-      <div className="bg-black py-10">
+      <div className="bg-black py-15">
         <h2 className="text-center text-4xl font-bold md:pb-8 md:text-7xl bg-clip-text text-white bg-opacity-50">Streamline your busines<br /> with our services</h2>
         <p className="my-2 text-lg font-normal text-neutral-300 max-w-lg text-center mx-auto">From Talent and Artist Management to Social Media Management, We offer a wide range of services to help you grow your business or talent</p>
         <HoverEffect items={services} />

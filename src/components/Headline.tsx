@@ -44,7 +44,7 @@ const Headline: React.FC<HeadlineProps> = ({ imageSrc, imageAlt, videoUrl, heade
 
 const Headlines: React.FC = () => {
   return (
-    <section className="bg-black my-6 pb-10">
+    <section className="bg-black my-4 pb-10">
       <h2 className="text-center text-4xl font-bold md:pb-8 md:text-7xl bg-clip-text text-white bg-opacity-50 py-10">Headline</h2>
       <div className="flex flex-col gap-4 justify-center w-full mb-6">
         {headlineData.slice(0,3).map((data, index) => (
@@ -57,7 +57,7 @@ const Headlines: React.FC = () => {
             paragraph={data.paragraph}
           />
         ))}
-        <Link href="/milestones" className='text-lg text-white text-center justify-center'><button className='hover:bg-white hover:text-black p-5 mt-10 bg-[gray] rounded-lg cursor-pointer'>View More</button></Link>
+        <Link href="/milestones" className='text-lg text-white text-center justify-center'><button className='hover:bg-white hover:text-black p-4 mt-10 bg-[gray] rounded-lg cursor-pointer'>View More</button></Link>
       </div>
     </section>
   );

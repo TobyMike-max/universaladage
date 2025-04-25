@@ -52,7 +52,7 @@ const Brands = () => {
 
   return (
     <div>
-      <div id="brands" className=" p-4 mx-auto relative z-10 w-full py-20 md:pt-20 bg-black mb-9 rounded-2xl">
+      <div id="brands" className=" p-4 mx-auto relative z-10 w-full py-8 md:pt-20 bg-black mb-4">
         <div className="text-4xl md:pb-8 md:text-7xl text-center font-bold 
         bg-clip-text text-white bg-opacity-50">
           Brands we work with

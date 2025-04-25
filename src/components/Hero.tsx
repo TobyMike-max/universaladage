@@ -75,17 +75,16 @@ const slides = [
     link: 'https://wikitia.com/wiki/Mr_Henry_Agbai',
   },
   {
-    src: '/kitay.jpg', 
+    src: '/kitay_2.jpg', 
     artist: 'Kitay',
-    leftText: 'Artist',
-    leftParagraph: '2025',
+    leftText: 'Crusify',
+    leftParagraph: '2022',
     leftImg: '/henry_agbai_pic.png',
     rightParagraph: '',
     rightImg: undefined,
     link: 'https://wikitia.com/wiki/Mr_Henry_Agbai',
   },
 ];
-{/*kitay picture*/}
 
 const Hero = ({ scrollToFaq, scrollToService, scrollToHeadline }: HeroProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
