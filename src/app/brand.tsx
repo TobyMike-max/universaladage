@@ -7,16 +7,8 @@ import React from "react";
 
 const logos = [
   {
-    id: 1,
-    image: "/logo/audiomack-seeklogo.png",
-  },
-  {
     id: 3,
     image: "/logo/meta-new-facebook-2021-seeklogo.png",
-  },
-  {
-    id: 4,
-    image: "/logo/spotify-seeklogo.png",
   },
   {
     id: 5,
@@ -25,10 +17,6 @@ const logos = [
   {
     id: 6,
     image: "/logo/google.png",
-  },
-  {
-    id: 8,
-    image: "/logo/boomplay.png",
   },
 ];
 
