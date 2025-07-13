@@ -11,6 +11,7 @@ import Headlines from "@/components/Headline";
 
 
 import { Poppins } from 'next/font/google'
+import Footer from "./footer";
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -41,7 +42,7 @@ export default function Home() {
   }
 
   return (
-    <div className={`container ${poppins.className}`}> {/*className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]"*/}
+    <div className={`${poppins.className}`}> {/*className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]"*/}
       <main> {/*className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start" */}
         <AnimatedSection>
           <Hero
@@ -88,6 +89,7 @@ export default function Home() {
           </AnimatedSection>
         </div>
       </main>
+      <Footer color={'bg-[#000]'} />
     </div>
   );
 }

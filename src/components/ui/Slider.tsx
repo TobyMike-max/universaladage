@@ -53,7 +53,7 @@ const SliderOne = () => {
     }
 
     return (
-        <div>
+        <div className="p-8">
         <Slider {...settings}>
                 <div className="rounded-md px-2 md:p-10">
                     <Image priority src="/ADMIT.jpg" alt="logo" width={600} height={100} className='rounded-2xl' />

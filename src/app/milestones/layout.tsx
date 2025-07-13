@@ -1,12 +1,8 @@
-import "./globals.css";
+import "../globals.css";
 import type { ReactNode } from "react";
 import Head from "next/head";
-import { Poppins } from "next/font/google";
+import Footer from "@/app/footer";
 
-const font = Poppins({
-  subsets: ["latin"],
-  weight: "400"
-});
 
 export const metadata = {
   title: "Universaladage - Digital Branding & SEO",
@@ -31,6 +27,7 @@ export default function RootLayout({ children }: LayoutProps) {
       <body>
         {/* <Navbar /> */}
         {children}
+        <Footer color={'bg-[#333]'}/>
       </body>
     </html>
   );

@@ -26,14 +26,14 @@ const artists = [
 
 function NextUpPage() {
     return (
-        <div className="w-full md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden container">
+        <div className="w-full md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
             <Navbar
                 scrollToFaq={() => { }}
                 scrollToService={() => { }}
                 scrollToHeadline={() => { }}
             />
                 <main className="bg-black md:min-h-screen text-white px-6 md:px-12 py-20 md:mt-15">
-                    <div className="max-w-6xl mx-auto">
+                    <div className="container mx-auto">
                         <p className="text-gray-400 mb-12 text-lg">Upcoming artists you need to keep your eyes on.</p>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">

@@ -1,5 +1,5 @@
 "use client";
-import { easeInOut, motion, useScroll, useTransform } from "framer-motion";
+import { AnimatePresence, easeInOut, motion, useScroll, useTransform } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
@@ -113,31 +113,31 @@ const Hero = ({ scrollToFaq, scrollToService, scrollToHeadline }: HeroProps) => 
           scrollToHeadline={scrollToHeadline} />
       </div>
       <section className="relative w-full h-screen overflow-hidden flex items-center justify-center">
-        {slides.map((slide, index) => (
-          <motion.div
-            key={slide.artist}
-            className={cn(
-              'absolute inset-0 w-full h-full animate-fadeInOut',
-              index === currentIndex ? 'opacity-100' : 'opacity-0',
-            )}
-            style={{
-              backgroundImage: `url(${slide.src})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center 10%',
-              backgroundRepeat: 'no-repeat',
-            }}
-            initial={{ scale: 1, opacity: 0 }}
-            animate={{
-              opacity: index === currentIndex ? 1 : 0,
-              scale: index === currentIndex ? 1.2 : 1,
-            }}
-            exit={{ opacity: 0, scale: 1 }}
-            transition={{
-              duration: 8, // Adjust duration for the slow scaling effect
-            }}
-          ></motion.div>
-        ))}
-
+        {slides.map((slide, index) =>
+  index === currentIndex && (
+    <AnimatePresence key={slide.artist} mode="wait">
+      <motion.div
+        key={slide.artist}
+        className="absolute inset-0 w-full h-full overflow-hidden"
+        initial={{ scale: 1, opacity: 0 }}
+        animate={{ scale: 1.2, opacity: 1 }}
+        exit={{ opacity: 0, scale: 1.2 }}
+        transition={{ duration: 8, ease: 'easeInOut' }}
+      >
+        <Image
+          src={slide.src}
+          alt={slide.artist}
+          fill
+          quality={80}
+          priority={index === 0}
+          className="object-cover object-center"
+          // placeholder="blur"
+          sizes="100vw"
+        />
+      </motion.div>
+    </AnimatePresence>
+  )
+)}
         {/* Left Image and Text */}
         <div className="absolute md:left-80 left-50 top-[20%] flex flex-col items-start gap-3">
           {/* <motion.img
@@ -245,25 +245,6 @@ const Hero = ({ scrollToFaq, scrollToService, scrollToHeadline }: HeroProps) => 
             ></button>
           ))}
         </div>
-
-        {/* Fade-in & Fade-out Animation */}
-        <style jsx>{`
-        @keyframes fadeInOut {
-          0% {
-            opacity: 0;
-          }
-          50% {
-            opacity: 1;
-          }
-          100% {
-            opacity: 0;
-          }
-        }
-
-        .animate-scaleUp {
-    animation: scaleUp 6s ease-in-out infinite;
-  }
-      `}</style>
 
       </section>
     </div>

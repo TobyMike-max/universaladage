@@ -20,9 +20,9 @@ const Navbar: React.FC<NavbarProps> = ({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-90 bg-dark text-light shadow-lg absolute top-0 left-0 w-full bg-transparent text-white hero-bg container">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-90 bg-dark text-light shadow-lg absolute w-full bg-transparent text-white hero-bg">
       <div className="max-w-screen mx-auto items-center justify-between p-4 px-4 sm:px-6 px-4 md:px-6 lg:px-8"> {/*Edit the spacing to the right and left of the navbar*/}
-        <div className="flex justify-between h-16">
+        <div className="flex justify-between h-16 max-w-[85rem] mx-auto">
           <div className="flex items-center gap-1 mt-3">{/*flex items-center gap-2*/}
             <Link href="/">
               <Image src="/UA-logo-typo-gray.png" alt="Universaladage Logo" width={50} height={50} className="w-auto h-10 sm:h-12" />

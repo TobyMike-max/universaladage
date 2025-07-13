@@ -43,11 +43,12 @@ const Headline: React.FC<HeadlineProps> = ({ imageSrc, imageAlt, videoUrl, heade
 
 const Milestone: React.FC = () => {
   return (
-    <section className="bg-black pb-10 container">
+    <section className="bg-black pb-10">
       <div className=''>
         <Link href='/' className='mt-10'><span className='text-white text-2xl p-5 bg-[#333]'>&larr;</span></Link>
-        <h2 className="text-center text-4xl font-bold md:pb-8 md:text-7xl bg-clip-text text-white bg-opacity-50 py-10">Milestones</h2></div>
-      <div className="flex flex-col gap-4 justify-center w-full mb-6">
+        <h2 className="text-center text-4xl font-bold md:pb-8 md:text-7xl bg-clip-text text-white bg-opacity-50 py-10">Milestones</h2>
+      </div>
+      <div className="flex flex-col gap-4 justify-center container mx-auto py-10 mb-6">
         {headlineData.map((data, index) => (
           <Headline
             key={index}

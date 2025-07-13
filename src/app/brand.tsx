@@ -39,14 +39,13 @@ const Brands = () => {
   }, []);
 
   return (
-    <div>
-      <div id="brands" className=" p-4 mx-auto relative z-10 w-full py-8 md:pt-20 bg-black mb-4">
-        <div className="text-4xl md:pb-8 md:text-7xl text-center font-bold 
-        bg-clip-text text-white bg-opacity-50">
+    <div className="bg-[#D9D9D9]">
+      <div id="brands" className="relative z-10 w-full py-8 md:pt-20 container mx-auto">
+        <div className="text-4xl md:pb-8 md:text-7xl text-center font-bold bg-clip-text text-black bg-opacity-50">
           Brands we work with
         </div>
 
-        <p className="mt-4 text-lg font-normal  text-neutral-300 max-w-lg text-center mx-auto">
+        <p className="mt-4 text-lg font-normal text-black max-w-lg text-center mx-auto">
           From small businesses to large corporations, we have helped
           brands and artists elevate their business.
         </p>
@@ -65,8 +64,8 @@ const Brands = () => {
           >
             <Image priority
                 src={logo.image}
-                width={100}
-                height={100}
+                width={50}
+                height={50}
                 alt="logo"
                 className="w-full max-w-full rounded-lg" />
           </motion.div>

@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 export default function Loading() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white space-y-6 container">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white space-y-6 w-full">
       {/* Logo (optional) */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}

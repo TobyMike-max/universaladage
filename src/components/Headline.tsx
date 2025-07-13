@@ -27,7 +27,7 @@ const Headline: React.FC<HeadlineProps> = ({ imageSrc, imageAlt, videoUrl, heade
           />
         </div>
         <div className="h-auto w-full md:w-1/2 mt-4 md:mt-0 md:pl-5 md:py-21 p-4 hover:bg-gray-800 transition-colors duration-300">
-          <h3 className="md:text-2xl text-xl font-semibold">{header}</h3>
+          <h3 className="md:text-3xl text-xl font-semibold">{header}</h3>
           <p className="mt-2">{paragraph}</p>
           <div className="mt-4 flex items-center group">
             <span className="text-lg font-medium">Listen Here</span>
@@ -44,7 +44,8 @@ const Headline: React.FC<HeadlineProps> = ({ imageSrc, imageAlt, videoUrl, heade
 
 const Headlines: React.FC = () => {
   return (
-    <section className="bg-black my-4 pb-10">
+    <section className="bg-black pb-10">
+      <div className="container mx-auto py-10">
       <h2 className="text-center text-4xl font-bold md:pb-8 md:text-7xl bg-clip-text text-white bg-opacity-50 py-10">Headline</h2>
       <div className="flex flex-col gap-4 justify-center w-full mb-6">
         {headlineData.slice(0,3).map((data, index) => (
@@ -58,6 +59,7 @@ const Headlines: React.FC = () => {
           />
         ))}
         <Link href="/milestones" className='text-lg text-white text-center justify-center'><button className='hover:bg-white hover:text-black p-4 mt-10 bg-[gray] rounded-lg cursor-pointer'>View More</button></Link>
+      </div>
       </div>
     </section>
   );
