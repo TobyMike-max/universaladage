@@ -1,11 +1,18 @@
 
 export const headlineData = [
+  {
+      imageSrc: '/Kwete.jpg',
+      imageAlt: 'Kwete image',
+      videoUrl: 'https://music.youtube.com/watch?v=1DFvRTxFmWc',
+      header: 'KWETE',
+      paragraph: "Kitay comes through with a brand-new tune titled 'Kwete', and it's already making waves.",
+    },
     {
       imageSrc: '/erma_2.png',
       imageAlt: 'DYNA Music Video',
       videoUrl: 'https://www.youtube.com/watch?v=pUwDy_GHyRk',
       header: 'DYNA',
-      paragraph: 'DYNA is a music by ERMA (now trending) resonates with any audience. It inspires change, promotes social justice, and brings awareness to important causes.',
+      paragraph: 'DYNA is a music by ERMA resonates with any audience. It inspires change, promotes social justice, and brings awareness to important causes.',
     },
     {
       imageSrc: '/frosh_better_plan.webp',

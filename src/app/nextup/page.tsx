@@ -51,6 +51,7 @@ function NextUpPage() {
                                             src={artist.image}
                                             alt={artist.name}
                                             fill
+                                            sizes="100vw"
                                             className="object-cover group-hover:scale-105 transition-transform duration-500"
                                             style={{ backgroundPosition: 'center 30%'}}
                                         />
