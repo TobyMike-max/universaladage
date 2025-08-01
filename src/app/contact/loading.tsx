@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+/* import { CldImage } from 'next-cloudinary' */
 
 export default function Loading() {
   return (

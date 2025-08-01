@@ -31,7 +31,7 @@ const Footer = ({ color }: FooterProps) => {
           <h2 className="text-xl font-semibold mb-8">Follow Us</h2>
           <div className="flex justify-center md:justify-start space-x-20 text-xl">
             <a href="https://www.facebook.com/share/14t5xUp4AR/?mibextid=wwXIfr" className="hover:text-hot-pink" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
-            <a href="https://www.instagram.com/universaladage?igsh=YnA5dHhrcG52cnY3&utm_source=qr" className="hover:text-hot-pink" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+            <a href="https://www.instagram.com/universaladage.io?igsh=aXlpY3lqaWI5MWp6&utm_source=qr" className="hover:text-hot-pink" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
             <a href="https://github.com" target="_blank" className="hover:text-hot-pink" rel="noopener noreferrer"><FaGithub /></a>
           </div>
         </div>

@@ -71,8 +71,7 @@ const AboutSection = () => {
 
       {/* Right Side - Text Content */}
       <div className="w-full lg:w-1/2 mt-30 lg:mt-0 lg:pl-16 text-center lg:text-left">
-        <h2 className="text-4xl font-bold text-4xl md:pb-8 md:text-7xl text-center font-bold 
-        bg-clip-text text-transparent bg-gradient-to-b from-gray-500 to-[#FDEBA3] bg-opacity-50">Meet Our Artists</h2>
+        <h2 className="text-4xl font-bold md:pb-8 md:text-7xl text-center bg-clip-text text-transparent bg-gradient-to-b from-gray-500 to-[#FDEBA3] bg-opacity-50">Meet Our Artists</h2>
         <p className="mt-4 text-gray-300">
           We are dedicated to discovering, nurturing, and elevating artists to new heights. Our roster
           includes some of the most promising talents in the industry, pushing the boundaries of creativity
