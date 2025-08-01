@@ -20,8 +20,8 @@ const Navbar: React.FC<NavbarProps> = ({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-90 bg-dark text-light shadow-lg absolute w-full bg-transparent text-white hero-bg">
-      <div className="max-w-screen mx-auto items-center justify-between p-4 px-4 sm:px-6 px-4 md:px-6 lg:px-8"> {/*Edit the spacing to the right and left of the navbar*/}
+    <nav className="fixed top-0 left-0 z-50 bg-opacity-90 bg-dark text-light shadow-lg w-full text-white hero-bg">
+      <div className="max-w-screen mx-auto items-center justify-between p-4 px-4 sm:px-6 md:px-6 lg:px-8"> {/*Edit the spacing to the right and left of the navbar*/}
         <div className="flex justify-between h-16 max-w-[85rem] mx-auto">
           <div className="flex items-center gap-1 mt-3">{/*flex items-center gap-2*/}
             <Link href="/">
