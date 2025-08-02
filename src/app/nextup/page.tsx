@@ -4,19 +4,20 @@ import Navbar from "@/components/Navbar";
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import { CldImage } from "next-cloudinary";
 
 const artists = [
     {
         name: 'Gift Godwin',
         genre: 'Actress',
-        image: '/Black_dress_2.jpg',
+        image: 'Black_dress_2_gtned2',
         bio: 'Soulful acting, realistic storyteller. One to watch.',
         link: '/'
     },
     {
         name: 'Kitay',
         genre: 'Afro-Beat Artist',
-        image: '/ogogoro_cover_art.jpg',
+        image: 'ogogoro_cover_art_rc9c3x',
         bio: 'Blending smooth hip-hop with a futuristic sound.',
         link: '/'
     },
@@ -47,7 +48,7 @@ function NextUpPage() {
                                     className="bg-zinc-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group"
                                 >
                                     <div className="relative w-full h-64 overflow-hidden">
-                                        <Image
+                                        <CldImage
                                             src={artist.image}
                                             alt={artist.name}
                                             fill

@@ -1,6 +1,7 @@
-import Image from 'next/image';
+"use client";
 import Link from 'next/link';
 import { headlineData } from '@/app/headline';
+import { CldImage } from 'next-cloudinary'
 
 interface HeadlineProps {
   imageSrc: string;
@@ -18,7 +19,7 @@ const Headline: React.FC<HeadlineProps> = ({ imageSrc, imageAlt, videoUrl, heade
         target="_blank"
         rel="noopener noreferrer">
         <div className="w-full md:w-1/5">
-          <Image
+          <CldImage
             src={imageSrc}
             alt={imageAlt}
             width={600}

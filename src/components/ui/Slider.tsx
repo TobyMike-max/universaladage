@@ -3,6 +3,7 @@
 import Slider from 'react-slick';
 import Image from 'next/image';
 import {useMediaQuery} from 'react-responsive';
+import { CldImage } from 'next-cloudinary';
 
 
 import 'slick-carousel/slick/slick.css';
@@ -56,13 +57,13 @@ const SliderOne = () => {
         <div className="p-8">
         <Slider {...settings}>
                 <div className="rounded-md px-2 md:p-10">
-                    <Image priority src="/ADMIT.jpg" alt="logo" width={600} height={100} className='rounded-2xl' />
+                    <CldImage priority src="ADMIT_njbg94" alt="logo" width={600} height={100} className='rounded-2xl' />
                 </div>
                 <div className="rounded-md px-2 md:p-10">
-                    <Image priority src="/koleyewon.jpg" alt="logo" width={600} height={100} className='rounded-2xl' />
+                    <CldImage priority src="koleyewon_bu6cr3" alt="logo" width={600} height={100} className='rounded-2xl' />
                 </div>
                 <div className="rounded-md px-2 md:p-10">
-                    <Image priority src="/KOLORADO.jpg" alt="logo" width={600} height={100} className='rounded-2xl' />
+                    <CldImage priority src="KOLORADO_mj9xx9" alt="logo" width={600} height={100} className='rounded-2xl' />
                 </div>
         </Slider>
         </div>

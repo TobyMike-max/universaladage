@@ -2,10 +2,9 @@
 import { AnimatePresence, easeInOut, motion, useScroll, useTransform } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { cn } from "@/lib/utils";
-
+import { CldImage } from "next-cloudinary";
 
 interface HeroProps {
   scrollToService: () => void
@@ -15,7 +14,7 @@ interface HeroProps {
 
 const slides = [
   {
-    src: '/UZOR-ARUKUWE.png',
+    src: 'UZOR-ARUKUWE_hoseha',
     artist: 'Uzor Arukwe',
     leftText: 'AMVCA Nominee',
     leftParagraph: '2025',
@@ -25,7 +24,7 @@ const slides = [
     link: 'https://en.wikipedia.org/wiki/Uzor_Arukwe',
   },
   {
-    src: '/NAZO-EKEZIE.png',
+    src: 'NAZO-EKEZIE_qmgea8',
     artist: 'Nazo Ekezie',
     leftText: 'City People Movie Award Winner',
     leftParagraph: '2017',
@@ -35,7 +34,7 @@ const slides = [
     link: 'https://en.wikipedia.org/wiki/Nazo_Ekezie',
   },
   {
-    src: '/ERMA.png',
+    src: 'ERMA_op_liyn4n',
     artist: 'ERMA',
     leftText: 'DYANA',
     leftParagraph: '2025',
@@ -45,7 +44,7 @@ const slides = [
     link: 'https://app.chartmetric.com/artist/12015611',
   },
   {
-    src: '/MR-FROSH.png',
+    src: 'MR-FROSH_cppek0',
     artist: 'Mr Frosh',
     leftText: 'Better Plan',
     leftParagraph: '2025',
@@ -55,7 +54,7 @@ const slides = [
     link: 'https://g.co/kgs/G7isBvN',
   },
   {
-    src: '/ecious_obd_9_3000x2000.jpg',
+    src: 'ecious_obd_9_3000x2000_cjp9jr',
     artist: 'ECIOUS OBD',
     leftText: 'HP',
     leftParagraph: '2025',
@@ -65,7 +64,7 @@ const slides = [
     link: 'https://g.co/kgs/v92dJxv',
   },
   {
-    src: '/MR-HENRY.png',
+    src: 'MR-HENRY_epqvt3',
     artist: 'Mr Henry Agbai',
     leftText: 'Executive Film Producer',
     leftParagraph: '2025',
@@ -75,7 +74,7 @@ const slides = [
     link: 'https://wikitia.com/wiki/Mr_Henry_Agbai',
   },
   {
-    src: '/kitay_2.jpg', 
+    src: 'kitay_2_n9tuf5', 
     artist: 'Kitay',
     leftText: 'Crusify',
     leftParagraph: '2022',
@@ -124,7 +123,7 @@ const Hero = ({ scrollToFaq, scrollToService, scrollToHeadline }: HeroProps) => 
         exit={{ opacity: 0, scale: 1.2 }}
         transition={{ duration: 8, ease: 'easeInOut' }}
       >
-        <Image
+        <CldImage
           src={slide.src}
           alt={slide.artist}
           fill
